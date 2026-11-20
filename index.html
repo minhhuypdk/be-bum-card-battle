@@ -187,6 +187,16 @@ main{display:flex;flex-direction:column}
 #root .player-setup-green .avatar-option.selected{border-color:#83ffb1!important;box-shadow:0 0 0 2px #a5ffc3,0 0 22px #36e47d99!important}
 #root .player-setup-red .random-player-btn{border-color:#ff9393!important}
 #root .player-setup-green .random-player-btn{border-color:#7af4a5!important}
+</style><style>
+/* Avatar tiles inherit the color of their player selection panel */
+#root .player-setup-red .avatar-grid .avatar-option{background:linear-gradient(155deg,#76283f,#4c1b36 65%,#29172f)!important;border:2px solid #cf6578!important;box-shadow:inset 0 1px 12px #ff98a41a,0 3px 8px #0005!important;color:#ffe6e6!important}
+#root .player-setup-green .avatar-grid .avatar-option{background:linear-gradient(155deg,#1b7051,#124b3c 65%,#0b302f)!important;border:2px solid #4dbb86!important;box-shadow:inset 0 1px 12px #94ffc51a,0 3px 8px #0005!important;color:#e2fff0!important}
+#root .player-setup-red .avatar-grid .avatar-option.selected{border-color:#ffcc8e!important;box-shadow:0 0 0 2px #ffb2a0,0 0 20px #ff5c7599!important}
+#root .player-setup-green .avatar-grid .avatar-option.selected{border-color:#c7ffb0!important;box-shadow:0 0 0 2px #96ffd0,0 0 20px #3fe58b99!important}
+#root .player-setup-red .avatar-grid .avatar-option:hover{border-color:#ffb6b6!important}
+#root .player-setup-green .avatar-grid .avatar-option:hover{border-color:#b2ffd0!important}
+#root .player-setup-red .avatar-grid .avatar-option>span:last-child{color:#ffe3e6!important}
+#root .player-setup-green .avatar-grid .avatar-option>span:last-child{color:#d8ffe9!important}
 </style><main><header class="brand-header"><img class="brand-logo" src="assets/Untitled.png" alt="Logo Bé BUM POKÉMON" onerror="this.style.display='none'"><h1 class="brand-title">Bé BUM POKÉMON</h1></header><div id="root"></div></main><script>
 let cards=JSON.parse(localStorage.getItem('bum_cards')||'[]'),players=[{name:'Bé Bum',team:[],ko:0,avatar:0},{name:'Ba',team:[],ko:0,avatar:4}],turn=0,draw=0,selected=0,guard=[false,false];const root=document.getElementById('root');
 /* Remember current screen and in-progress local game between refreshes. */
