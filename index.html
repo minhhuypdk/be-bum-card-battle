@@ -226,6 +226,10 @@ main{display:flex;flex-direction:column}
 #root .trainer-actions .trainer-secondary button{flex:0 1 300px}
 #root .trainer-ready-footer{color:#9dc9ef;font-size:12px;letter-spacing:.1em;margin-top:18px}
 @media(max-width:620px){#root .trainer-stage{padding:8px 2px 12px}#root .trainer-status-row{gap:7px}#root .trainer-status{padding:7px;gap:7px;border-radius:11px}#root .trainer-status-portrait{flex-basis:42px;width:42px;height:42px;border-radius:8px}#root .trainer-status-copy small{font-size:9px}#root .trainer-status-copy span{font-size:9px}#root .trainer-status-copy strong{font-size:13px}#root .trainer-ready-panel{padding:13px 9px;border-radius:16px}#root .trainer-ready-players{gap:7px}#root .trainer-ready-player{padding:7px;gap:4px;font-size:11px}#root .trainer-ready-player strong{width:100%}#root .trainer-actions .trainer-primary{min-height:56px}#root .trainer-actions .trainer-secondary button{flex:1 1 130px}}
+</style><style>
+/* Home VS nameplates follow player colors: red for P1, green for P2 */
+#root .arena .player-name.left{background:linear-gradient(110deg,#6d1731ed,#b42f49ed 50%,#6d1731ed)!important;border:2px solid #ff8998!important;color:#fff5f5!important;box-shadow:0 0 18px #ff4d7470,inset 0 1px 8px #ffb1bd35,0 5px 14px #0007!important;text-shadow:0 2px 5px #380a20!important}
+#root .arena .player-name.right{background:linear-gradient(110deg,#0e4a37ed,#20885ded 50%,#0e4a37ed)!important;border:2px solid #7af0a8!important;color:#f1fff5!important;box-shadow:0 0 18px #3ce89370,inset 0 1px 8px #b0ffce35,0 5px 14px #0007!important;text-shadow:0 2px 5px #063a25!important}
 </style><main><header class="brand-header"><img class="brand-logo" src="assets/Untitled.png" alt="Logo Bé BUM POKÉMON" onerror="this.style.display='none'"><h1 class="brand-title">Bé BUM POKÉMON</h1></header><div id="root"></div></main><script>
 let cards=JSON.parse(localStorage.getItem('bum_cards')||'[]'),players=[{name:'Bé Bum',team:[],ko:0,avatar:0},{name:'Ba',team:[],ko:0,avatar:4}],turn=0,draw=0,selected=0,guard=[false,false];const root=document.getElementById('root');
 /* Remember current screen and in-progress local game between refreshes. */
