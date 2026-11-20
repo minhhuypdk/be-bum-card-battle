@@ -267,6 +267,42 @@ main{display:flex;flex-direction:column}
 @keyframes royalPulse{50%{opacity:.6;transform:scale(1.04)}}
 @media(max-width:650px){#root .library-header{padding:24px 8px 17px!important}#root .library-detail-visual>img{width:min(86%,340px)}#root .library-detail-visual.is-zoomed>img{transform:scale(1.09)}}
 @media(prefers-reduced-motion:reduce){#root .library-detail-visual:before{animation:none}#root .library-card-grid .library-card,#root .library-detail-visual>img{transition:none!important}}
+</style><style>
+/* BUM 2D VISUAL SYSTEM — Royal Holographic × Neon Arena, all screens */
+:root{--bum-gold:#f6d990;--bum-cyan:#74ddff;--bum-ink:#07142e;--bum-green:#49e3a1;--bum-red:#ff758b}
+body{background:radial-gradient(ellipse at 50% 6%,#275c9d 0%,#0b2553 43%,#050d24 100%)!important}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.48;background:radial-gradient(circle at 14% 24%,#4ddfff22 0 2px,transparent 3px),radial-gradient(circle at 82% 12%,#ffdf9822 0 2px,transparent 3px),radial-gradient(circle at 66% 78%,#74e5ff25 0 2px,transparent 3px),repeating-linear-gradient(0deg,transparent 0 69px,#82dfff06 70px 71px);background-size:290px 240px,340px 290px,400px 360px,100% 100%}
+main{z-index:1}.brand-title{filter:drop-shadow(0 0 12px #ffcf6a6b)}#root>section{isolation:isolate;border-color:#85dfff;background:radial-gradient(ellipse at 50% 0%,#2576bb2b,transparent 55%),linear-gradient(150deg,#10376df5,#07162feF)!important;box-shadow:0 0 32px #37bfff2b,inset 0 0 32px #64e3ff13!important}
+#root>section:after{content:"";position:absolute;inset:8px;border:1px solid #e5c78324;border-radius:18px;pointer-events:none;z-index:-1}
+#root>section>h2{color:#fff0c9!important;text-shadow:0 0 18px #43c5ff99!important;letter-spacing:.025em}
+#root button:not(.library-card):not(.library-filter):not(.avatar-option):not(.uploaded-card):not(.collection-preview-card){transition:transform .16s ease,filter .16s ease,box-shadow .16s ease}
+#root button:not(:disabled):hover{filter:brightness(1.09)}#root button:focus-visible{outline:3px solid #a4f5ff;outline-offset:3px}
+#root .tile{border-color:#9adfff;background:linear-gradient(145deg,#1b548a,#091c3f);box-shadow:inset 0 1px #d5f7ff45,0 8px 22px #0005}
+#root .arena{border:2px solid #7ddfff;box-shadow:inset 0 0 50px #3cbaff50,0 0 27px #4bcaff38;background:radial-gradient(ellipse at 50% 100%,#48dbff70,#1b5da7 39%,#0a1740 78%)}
+#root .arena:after{content:"";position:absolute;inset:10px;border:1px solid #f7dc9c55;border-radius:16px;pointer-events:none}
+#root .arena-label{letter-spacing:.12em;text-shadow:0 0 12px #76dcff}
+#root .command-center{border-color:#d6b979!important;background:linear-gradient(150deg,#102f60,#071732)!important;box-shadow:0 0 25px #e2bb6430,inset 0 0 22px #63cfff14}
+#root .command-heading{color:#ffe2a1;text-shadow:0 0 16px #f4c87855;letter-spacing:.08em}
+#root .command-btn{position:relative;overflow:hidden;border-color:#9cddff!important;box-shadow:inset 0 1px #ffffff52,0 7px 20px #0008!important}
+#root .command-btn:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,transparent 24%,#ffffff15 43%,transparent 56%);opacity:.7}
+#root .player-name.left{background:linear-gradient(110deg,#9f213f,#e64664)!important;border:1px solid #ffb0b8!important;color:white!important}
+#root .player-name.right{background:linear-gradient(110deg,#0e7551,#29b77e)!important;border:1px solid #91ffd0!important;color:white!important}
+#root .battle-match{border-color:#b7eaff;background:radial-gradient(ellipse at 50% 85%,#31d5ff4d,transparent 64%),linear-gradient(150deg,#0d2955,#06142e)!important}
+#root .battle-versus{background:linear-gradient(150deg,#fff8d2,#e8a83d);background-clip:text;-webkit-background-clip:text;color:transparent!important;filter:drop-shadow(0 2px 7px #f4c05a88)}
+#root .battle-action-panel{border-color:#e2c47c;background:linear-gradient(145deg,#0c305f,#06162f)}
+#root .battle-fighter{transition:box-shadow .2s ease}#root .fighter-art{border:1px solid #8bdfff65;box-shadow:inset 0 0 25px #36aaff35}
+#root .battle-fighter.player-0 .fighter-art{background:radial-gradient(circle at center,#a72b5266,#0b1735 80%)}#root .battle-fighter.player-1 .fighter-art{background:radial-gradient(circle at center,#1ca57455,#0b1735 80%)}
+#root .battle-fighter .fighter-art img{filter:drop-shadow(0 6px 12px #0008)}
+#root .scan-review,#root .uploaded-card-detail{border-color:#c5dfff;background:linear-gradient(145deg,#113a69,#081b3c)}
+#root .scan-actions{display:flex;flex-wrap:wrap;gap:10px}#root .scan-button{border:1px solid #f4d890;box-shadow:0 0 16px #f4cb6633}
+#root .collection-empty{border-color:#d6c17b;background:radial-gradient(ellipse at top,#2478a13a,transparent),#0a2549}
+#root .library-card-navigation button,#root .library-bottom-actions button{border-color:#f6d98e}
+#root .library-detail-info{box-shadow:inset 0 0 20px #5ccfff17,0 7px 22px #0004}
+#root .grid>button:not(.uploaded-card):not(.library-card):not(.collection-preview-card){min-width:0;overflow-wrap:anywhere;background:linear-gradient(145deg,#173e73,#0b234b)!important;border:1px solid #80dfff!important;color:#f2faff!important;box-shadow:inset 0 1px #ffffff30,0 5px 15px #0006!important}
+#root .grid>button:not(.uploaded-card):not(.library-card):not(.collection-preview-card):hover{border-color:#ffe3a1!important}
+#root .bum-design-credit{border-right-color:#e9cb85;background:linear-gradient(90deg,transparent,#082449c9);color:#f5e3c5}
+@media(max-width:550px){#root>section{padding:17px 11px!important}#root>section:after{inset:5px;border-radius:14px}#root .battle-versus{font-size:22px}}
+@media(prefers-reduced-motion:reduce){#root button{transition:none!important}}
 </style><main><header class="brand-header"><img class="brand-logo" src="assets/Untitled.png" alt="Logo Bé BUM POKÉMON" onerror="this.style.display='none'"><h1 class="brand-title">Bé BUM POKÉMON</h1></header><div id="root"></div></main><script>
 let cards=JSON.parse(localStorage.getItem('bum_cards')||'[]'),players=[{name:'Bé Bum',team:[],ko:0,avatar:0},{name:'Ba',team:[],ko:0,avatar:4}],turn=0,draw=0,drawTarget=5,selected=0,guard=[false,false];const root=document.getElementById('root');
 /* Remember current screen and in-progress local game between refreshes. */
