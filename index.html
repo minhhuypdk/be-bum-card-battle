@@ -66,6 +66,45 @@ main{z-index:0}
 #root>section{background:linear-gradient(155deg,rgba(7,28,73,.87),rgba(3,17,49,.91))!important;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);border-color:#70d4ff;box-shadow:0 0 35px #06aaff3d,inset 0 0 25px #61cfff1a}
 #root.home-screen .command-center{background:linear-gradient(155deg,rgba(7,26,61,.91),rgba(9,44,87,.88) 58%,rgba(7,26,57,.92))!important}
 @media(max-width:600px){body:before{background-position:center center!important}#root>section{backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}}
+</style><style>
+/* Unified Poké Ball command buttons across every screen, preserving their onclick actions */
+#root:not(.home-screen) button:not(.avatar-option):not(.command-btn),
+#root:not(.home-screen) .scan-button{
+ --ball-color:#ef454d;--ball-accent:#ffdc7b;
+ display:inline-flex;align-items:center;justify-content:center;gap:10px;
+ vertical-align:middle;min-height:58px;max-width:100%;padding:12px 19px;
+ margin:6px 7px 8px 0;border:1.5px solid #69caff;border-radius:17px;
+ background:linear-gradient(135deg,#184a7eeb,#092448f5 70%,#061d3df5);
+ color:#f6f9ff;font-size:clamp(14px,2.3vw,19px);font-weight:850;line-height:1.25;
+ text-shadow:0 1px 3px #000a;box-shadow:inset 0 1px 12px #b6e8ff20,0 5px 0 #04172e,0 0 13px #2ebdff33;
+ cursor:pointer;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease
+}
+#root:not(.home-screen) button:not(.avatar-option):not(.command-btn):before,
+#root:not(.home-screen) .scan-button:before{
+ content:"";display:inline-block;flex:none;width:30px;height:30px;border-radius:50%;
+ border:2px solid #091628;
+ background:radial-gradient(circle at 50% 50%,#fff 0 10%,#15233a 11% 19%,#fff 20% 25%,transparent 26%),
+ linear-gradient(to bottom,var(--ball-color) 0 43%,#111e33 44% 55%,#f3f8ff 56% 100%);
+ box-shadow:inset -4px -3px 6px #001a3677,inset 3px 3px 5px #ffffff70,0 2px 6px #000a;
+ transform:rotate(-12deg)
+}
+#root:not(.home-screen) button:not(.avatar-option):not(.command-btn):hover,
+#root:not(.home-screen) .scan-button:hover{border-color:#ffe39b;box-shadow:inset 0 1px 15px #d0f1ff3a,0 6px 0 #04172e,0 0 19px #4acbff88;transform:translateY(-2px)}
+#root:not(.home-screen) button:not(.avatar-option):not(.command-btn):active,
+#root:not(.home-screen) .scan-button:active{transform:translateY(3px);box-shadow:0 2px 0 #04172e}
+#root:not(.home-screen) button[onclick*="home()"]{--ball-color:#f4c542;--ball-accent:#ffe7a0;border-color:#e4c975;background:linear-gradient(135deg,#3c425c,#142543)}
+#root:not(.home-screen) button[onclick*="collection()"]{--ball-color:#337de9;border-color:#64c7ff}
+#root:not(.home-screen) button[onclick*="setupScreen()"]{--ball-color:#232b3c;border-color:#e6c65c}
+#root:not(.home-screen) button[onclick*="start()"],#root:not(.home-screen) button[onclick*="finishAvatarSelection()"]{--ball-color:#f44747;border-color:#ffe1a0;background:linear-gradient(135deg,#25558a,#14345b)}
+#root:not(.home-screen) button[onclick*="add()"],#root:not(.home-screen) .scan-button{--ball-color:#3d84ee}
+#root:not(.home-screen) button[onclick*="names()"],#root:not(.home-screen) button[onclick*="battle()"]{--ball-color:#42a9c9}
+#root:not(.home-screen) button .ui-icon{width:1em;height:1em;margin-right:0;color:#a9dcff}
+#root:not(.home-screen) .setup-actions{gap:4px;justify-content:center}
+#root:not(.home-screen) .scan-button{min-height:82px;text-align:center;margin:0;flex-wrap:wrap}
+#root:not(.home-screen) .avatar-option{transition:transform .15s ease,border-color .15s ease}
+#root:not(.home-screen) .avatar-option:before{content:none}
+@media(max-width:550px){#root:not(.home-screen) button:not(.avatar-option):not(.command-btn){padding:11px 13px;min-height:52px;font-size:14px}#root:not(.home-screen) button:not(.avatar-option):not(.command-btn):before{width:24px;height:24px}#root:not(.home-screen) .setup-actions button{flex:1 1 170px}}
+@media(prefers-reduced-motion:reduce){#root:not(.home-screen) button{transition:none}}
 </style><main><header class="brand-header"><img class="brand-logo" src="assets/Untitled.png" alt="Logo Bé BUM POKÉMON" onerror="this.style.display='none'"><h1 class="brand-title">Bé BUM POKÉMON</h1></header><div id="root"></div></main><script>
 let cards=JSON.parse(localStorage.getItem('bum_cards')||'[]'),players=[{name:'Bé Bum',team:[],ko:0,avatar:0},{name:'Ba',team:[],ko:0,avatar:4}],turn=0,draw=0,selected=0,guard=[false,false];const root=document.getElementById('root');function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}function show(s){root.classList.remove('home-screen');root.innerHTML='<section><div class="brand-mini"><img src="assets/Untitled.png" alt="Logo Bé BUM POKÉMON" onerror="this.style.display=\'none\'"><span>Bé BUM POKÉMON</span></div>'+s+'</section>'}const avatars=[
 ['Bé trai','🧢','#f5bd91','#583522','#2187ed','short'],['Bé gái','🎀','#ffd1a8','#57362b','#fa75aa','long'],['Nam sinh','🎮','#dba37e','#22202d','#42b6a8','spike'],['Nữ sinh','⭐','#f4bd98','#8b442f','#b779ee','long'],['Ba trẻ','🏅','#e5a37b','#2e2527','#2869d6','short'],['Mẹ trẻ','🌷','#f7c3a1','#382b30','#e66585','long'],['Ông','📚','#e9b38e','#c8cbd6','#46739b','short'],['Bà','🌼','#e9bc9c','#d7d7d7','#a56dc0','long'],['Chàng trai','⚽','#bb7e5e','#141b29','#f18b36','spike'],['Cô gái','🎨','#eec3a5','#6c3a29','#45bca0','long'],['Chú','🧥','#c88e6e','#2c2c30','#4f85c8','short'],['Cô','🎵','#f2bda1','#6a3228','#ffb94b','long'],['Cậu','⚡','#e2a77e','#1b243b','#4d9be6','spike'],['Dì','💎','#f1bb9c','#753a46','#a35ce3','long']];
